@@ -1,0 +1,13 @@
+{
+  "name": "hex-settlers",
+  "version": "1.0.0",
+  "description": "Self-hostable online multiplayer hex settlers game (Catan-style mechanics).",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2",
+    "socket.io": "^4.7.5"
+  }
+}
