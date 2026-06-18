@@ -196,3 +196,43 @@ button.act.on { background: var(--brass); border-color: var(--brass-deep); }
   .panel { width: 100%; max-height: none; }
   #board { max-height: 60vh; }
 }
+
+/* ---- v2 additions ---- */
+.die { padding: 0; }
+.dev-box {
+  border-top: 1px dashed var(--line); padding-top: 10px; margin-top: 4px;
+  display: flex; flex-direction: column; gap: 6px;
+}
+.dev-box h3 { margin: 0 0 2px; font-size: 14px; }
+button.dev-play { background: #f3e7c9; border-color: var(--brass-deep); font-weight: 600; }
+.ports-line { margin-top: 2px; }
+.rate-info { font-weight: 600; color: var(--ink) !important; }
+.res-select {
+  font: inherit; padding: 7px 9px; border-radius: 8px;
+  border: 1px solid var(--parchment-edge); background: #fffdf6; width: 100%; margin-top: 4px;
+}
+.modal label { display: block; font-weight: 600; font-size: 13px; margin-bottom: 10px; }
+.offer-cols { display: flex; gap: 16px; }
+.offer-col { flex: 1; }
+.offer-col h3 { margin: 0 0 8px; font-size: 14px; }
+.offer-col .res-row { margin-bottom: 6px; }
+.offer-col .label { font-size: 13px; }
+.offer-col .stepper button { width: 26px; height: 26px; font-size: 16px; }
+
+/* resource-gain popup */
+#gain-pop {
+  position: fixed; top: 76px; left: 50%; transform: translateX(-50%) translateY(-16px);
+  background: var(--parchment); border: 1px solid var(--brass-deep); border-radius: 14px;
+  padding: 14px 20px; box-shadow: var(--shadow); z-index: 55; text-align: center;
+  opacity: 0; pointer-events: none; transition: opacity .25s, transform .25s;
+}
+#gain-pop.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+#gain-pop.hidden { display: none; }
+.gain-title { font-family: 'Marcellus', serif; font-size: 15px; color: var(--ink-soft); margin-bottom: 8px; }
+.gain-cards { display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; }
+.gain-card {
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  min-width: 52px; padding: 8px 10px; border-radius: 9px; color: #fff;
+  font-size: 12px; font-weight: 600; text-shadow: 0 1px 2px #0006;
+}
+.gain-card span { font-size: 20px; font-weight: 800; line-height: 1; margin-bottom: 2px; }

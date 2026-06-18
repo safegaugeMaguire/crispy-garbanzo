@@ -95,6 +95,11 @@ io.on('connection', (socket) => {
       case 'respond_offer': r = room.respondOffer(pid, payload.accept); break;
       case 'confirm_trade': r = room.confirmTrade(pid, payload.withId); break;
       case 'cancel_offer': r = room.cancelOffer(pid); break;
+      case 'buy_dev': r = room.buyDev(pid); break;
+      case 'play_knight': r = room.playKnight(pid); break;
+      case 'play_road_building': r = room.playRoadBuilding(pid); break;
+      case 'play_monopoly': r = room.playMonopoly(pid, payload.resource); break;
+      case 'play_year_of_plenty': r = room.playYearOfPlenty(pid, payload.r1, payload.r2); break;
       case 'end_turn': r = room.endTurn(pid); break;
       default: r = { error: 'Unknown action.' };
     }

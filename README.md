@@ -96,3 +96,24 @@ renders whatever state it receives. Natural next additions:
 
 All building/placement rules are validated server-side, so the client's
 highlighting is only a convenience and can't be used to cheat.
+
+---
+
+## What's new in v2
+
+**Development cards.** Buy with 1 ore + 1 sheep + 1 wheat (25-card deck):
+- **Knight** — move the robber and steal; 3+ played knights earns **Largest Army** (+2 VP).
+- **Victory Point** — hidden, counts toward your score (revealed at win).
+- **Road Building** — place 2 roads free.
+- **Monopoly** — name a resource; all opponents hand you theirs.
+- **Year of Plenty** — take any 2 resources from the bank.
+
+Rule used for clarity: you may play **one** development card per turn, **after rolling**, and **not** on the turn you bought it.
+
+**Harbors / ports.** 9 harbors around the coast — four generic 3:1 and one 2:1 for each resource. Build a settlement or city on a harbor vertex to unlock its rate; the bank-trade dialog shows your live rate per resource. Owned harbors are listed under your hand and highlighted on the board.
+
+**"You collected" popup.** Every time a roll (or your second setup settlement) produces resources for you, a popup shows exactly which cards you gained. Steals, monopolies, and completed trades also raise on-screen toasts.
+
+**Discard-on-7 fix.** The discard dialog no longer resets your selection when another player acts — forced dialogs are now built once and preserved until resolved.
+
+**Graphics.** Each tile now carries a hand-drawn resource glyph (forest, hills, pasture, fields, mountains, dunes), number tokens show probability pips (red for 6 & 8), dice render as real pip faces, and harbors show dock badges tethered to their build spots — all original inline SVG, no external assets.
