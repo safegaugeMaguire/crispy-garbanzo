@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hex Settlers</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- LOBBY -->
+  <section id="lobby" class="lobby">
+    <div class="lobby-card">
+      <div class="compass" aria-hidden="true">✦</div>
+      <h1>Hex Settlers</h1>
+      <p class="tagline">Settle the island. Trade, build, and race to ten points — together, online.</p>
+      <label>Your name
+        <input id="name" maxlength="16" placeholder="e.g. Marco" autocomplete="off" />
+      </label>
+      <button id="btn-create" class="primary">Create a new game</button>
+      <div class="divider"><span>or</span></div>
+      <label>Room code
+        <input id="room-code" maxlength="4" placeholder="ABCD" autocomplete="off" style="text-transform:uppercase" />
+      </label>
+      <button id="btn-join">Join with code</button>
+      <p id="lobby-error" class="error-line"></p>
+    </div>
+    <footer class="lobby-foot">A self-hosted, original settlers-style game · 2–4 players</footer>
+  </section>
+
+  <!-- GAME -->
+  <section id="game" class="game hidden">
+    <header class="topbar">
+      <div class="brand">Hex Settlers</div>
+      <div class="room-tag">Room <strong id="room-id">—</strong> <button id="copy-link" class="ghost mini">Copy invite</button></div>
+      <div id="turn-banner" class="turn-banner">Waiting…</div>
+    </header>
+
+    <main class="table">
+      <div class="board-wrap">
+        <svg id="board" viewBox="0 0 800 800" preserveAspectRatio="xMidYMid meet"></svg>
+        <div id="dice" class="dice hidden"><span class="die" id="die1">–</span><span class="die" id="die2">–</span></div>
+      </div>
+
+      <aside class="panel">
+        <div id="players" class="players"></div>
+
+        <div class="your-hand">
+          <h3>Your resources</h3>
+          <div id="hand" class="hand"></div>
+        </div>
+
+        <div id="controls" class="controls"></div>
+
+        <div class="log-box">
+          <h3>Game log</h3>
+          <ul id="log" class="log"></ul>
+        </div>
+      </aside>
+    </main>
+  </section>
+
+  <!-- Modal host -->
+  <div id="modal-root"></div>
+  <div id="toast" class="toast hidden"></div>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="client.js"></script>
+</body>
+</html>
